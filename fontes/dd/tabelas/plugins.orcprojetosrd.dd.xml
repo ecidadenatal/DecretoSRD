@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="yes" ?>
+<table name="plugins.orcprojetosrd" description="Projetos do tipo SRD" prefix="" label="Projetos do tipo SRD" type="0">
+  <fields>
+    <field name="sequencial"
+           conteudo="int4"
+           description="Sequencial"
+           inivalue="0"
+           label="Sequencial"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Sequencial"
+           reference=""
+           ispk="t"
+           hassequence="t">
+      <sequence name="plugins.orcprojetosrd_sequencial_seq" ></sequence>
+    </field>
+    <field name="orcprojeto"
+           conteudo="int4"
+           description="Projeto"
+           inivalue="0"
+           label="Projeto"
+           size="10"
+           null="f"
+           uppercase="f"
+           autocompl="f"
+           aceitatipo="1"
+           tipoobj="text"
+           labelrel="Projeto"
+           reference=""
+           ispk="f"
+           hassequence="f">
+    </field>
+  </fields>
+  <primarykey>
+    <fieldpk  name="sequencial"></fieldpk>
+  </primarykey>
+</table>

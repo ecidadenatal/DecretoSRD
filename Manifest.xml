@@ -6,6 +6,8 @@
 
     <!-- outro -->
     <file name="DecretoSRD.xml"    path="/modification/xml/DecretoSRD.xml" />
+    <file name="db_orcprojetosrd_classe.php"    path="/classes/db_orcprojetosrd_classe.php" />
+    <file name="plugins.orcprojetosrd.dd.xml"    path="/dd/tabelas/plugins.orcprojetosrd.dd.xml" />
 
    </files>
   </plugin>

@@ -36,6 +36,22 @@
 
   <file path='orc1_orcprojeto011.php'>
     <operation>
+      <search regex="true"><![CDATA[db_fim_transacao\(\$lErro\);]]></search>
+      <add>
+        <![CDATA[
+  if (isset($SRD)) {
+    
+    $oDaoOrcProjetSRD = db_utils::getDao("orcprojetosrd");
+    $oDaoOrcProjetSRD->orcprojeto = $clorcprojeto->o39_codproj;
+    $oDaoOrcProjetSRD->incluir(null);
+    
+  }
+  
+  db_fim_transacao($lErro);]]>
+      </add>
+    </operation>  
+  
+    <operation>
       <search><![CDATA[include("forms/db_frmorcprojeto.php");]]></search>
       <add>
         <![CDATA[include(modification("forms/db_frmorcprojeto.php"));]]>
@@ -195,6 +211,19 @@ $1]]>
 
   <file path='orc1_orcsuplemval007.php'>
     <operation>
+      <search regex="true"><![CDATA[(db_postmemory\(\$HTTP_POST_VARS\);)]]></search>
+      <add>
+        <![CDATA[$1
+        
+$oDaoOrcProjetSRD = db_utils::getDao("orcprojetosrd");
+$oDaoOrcProjetSRD->sql_record($oDaoOrcProjetSRD->sql_query_file(null, "1", "orcprojeto = {$o39_codproj}"));
+if ($oDaoOrcProjetSRD->numrows > 0) {
+    $SRD = true;
+}        
+        ]]>
+      </add>
+    </operation>
+    <operation>
       <search regex="true"><![CDATA[(\$res\s*=\s*\$clorcdotacao->sql_record\(\$clorcdotacao->sql_query\(.*\);)]]></search>
       <add>
         <![CDATA[$sWhere = "";
@@ -272,6 +301,20 @@ $1]]>
   </file>
     
   <file path='orc1_orcsuplemval001.php'>
+    <operation>
+      <search regex="true"><![CDATA[(db_postmemory\(\$HTTP_POST_VARS\);)]]></search>
+      <add>
+        <![CDATA[$1
+        
+$oDaoOrcProjetSRD = db_utils::getDao("orcprojetosrd");
+$oDaoOrcProjetSRD->sql_record($oDaoOrcProjetSRD->sql_query_file(null, "1", "orcprojeto = {$o39_codproj}"));
+if ($oDaoOrcProjetSRD->numrows > 0) {
+    $SRD = true;
+}        
+        ]]>
+      </add>
+    </operation>
+      
     <operation>
       <search regex="true"><![CDATA[(\$res\s*=\s*\$clorcdotacao->sql_record\(\$clorcdotacao->sql_query\(.*\);)]]></search>
       <add>
