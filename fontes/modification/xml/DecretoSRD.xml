@@ -216,7 +216,7 @@ $1]]>
         <![CDATA[$1
         
 $oDaoOrcProjetSRD = db_utils::getDao("orcprojetosrd");
-$oDaoOrcProjetSRD->sql_record($oDaoOrcProjetSRD->sql_query_file(null, "1", "orcprojeto = {$o39_codproj}"));
+$oDaoOrcProjetSRD->sql_record($oDaoOrcProjetSRD->sql_query_file(null, "1", null, "orcprojeto = {$o39_codproj}"));
 if ($oDaoOrcProjetSRD->numrows > 0) {
     $SRD = true;
 }        
@@ -307,7 +307,7 @@ if ($oDaoOrcProjetSRD->numrows > 0) {
         <![CDATA[$1
         
 $oDaoOrcProjetSRD = db_utils::getDao("orcprojetosrd");
-$oDaoOrcProjetSRD->sql_record($oDaoOrcProjetSRD->sql_query_file(null, "1", "orcprojeto = {$o39_codproj}"));
+$oDaoOrcProjetSRD->sql_record($oDaoOrcProjetSRD->sql_query_file(null, "1", null, "orcprojeto = {$o39_codproj}"));
 if ($oDaoOrcProjetSRD->numrows > 0) {
     $SRD = true;
 }        
